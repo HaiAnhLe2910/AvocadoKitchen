@@ -1,4 +1,4 @@
-import {Injectable, EventEmitter} from '@angular/core';
+import {Injectable, EventEmitter, OnDestroy} from '@angular/core';
 import {Recipe} from "./recipes.model";
 import {Ingredient} from "../shared/ingredient.model";
 import {ShoppingListService} from "../shopping-list/shopping-list.service";
@@ -7,7 +7,6 @@ import {ShoppingListService} from "../shopping-list/shopping-list.service";
   providedIn: 'root'
 })
 export class RecipeService {
-  recipeSelected = new EventEmitter<Recipe>();
 
   private recipes: Recipe[] = [
     new Recipe('Greek Salad', 'Most famous salad in the world', 'https://cdn.loveandlemons.com/wp-content/uploads/2019/07/greek-salad-2.jpg', [new Ingredient('Cheese', 2), new Ingredient('Cucumber', 5), new Ingredient('Sla', 2)]),
@@ -34,5 +33,6 @@ export class RecipeService {
   updateRecipe(index: number) {
 
   }
+
 
 }
